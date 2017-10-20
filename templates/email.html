@@ -1,0 +1,44 @@
+<!doctype HTML>
+<html>
+    <body>
+        <ul>
+            {% with messages = get_flashed_messages() %}
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            {% endwith %}
+        </ul>
+        <form action='/email' method="POST">
+        <table>
+            <tr>
+                <td>
+                    <label for="email-to">To: </label>
+                </td>
+                <td>
+                    <input type="email" id="email-to" name="email_to" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email-subject">Subject: </label>
+                </td>
+                <td>
+                    <input type="text" id="email-subject" name="email_subject" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email-message">Message: </label>
+                </td>
+                <td>
+                    <input type="text" id="email-message" name="email_message" />
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Send Email" /></td>
+            </tr>
+        </table>
+        </form>
+    </body>
+</html>
